@@ -1,0 +1,165 @@
+{
+  "total_tickets": 106,
+  "accepted": 79,
+  "rejected": 5,
+  "suspicious": 22,
+  "doc_type_counts": {
+    "INVESTIGATION": 121,
+    "INVOICE": 89,
+    "ESTIMATION": 53,
+    "REJECTION": 56,
+    "IMAGE": 1
+  },
+  "daily_counts": {
+    "2026-05-26": 39,
+    "2026-05-27": 34,
+    "2026-06-19": 1,
+    "2026-06-22": 8,
+    "2026-06-23": 4,
+    "2026-06-26": 18,
+    "2026-08-09": 1,
+    "2026-08-11": 1
+  },
+  "recent_flags": [
+    {
+      "ticket_id": "4001234353",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "PAID / PURE",
+      "time": "26 Jun 15:16"
+    },
+    {
+      "ticket_id": "4001234353",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "PAID / PURE",
+      "time": "26 Jun 13:45"
+    },
+    {
+      "ticket_id": "4001234353",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "PAID / PURE",
+      "time": "26 Jun 13:04"
+    },
+    {
+      "ticket_id": "4001234353",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "PAID / PURE",
+      "time": "23 Jun 13:23"
+    },
+    {
+      "ticket_id": "4001234353",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "PAID / PURE",
+      "time": "23 Jun 13:08"
+    },
+    {
+      "ticket_id": "4001234353",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "PAID / PURE",
+      "time": "23 Jun 12:16"
+    },
+    {
+      "ticket_id": "4001234353",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "PAID / PURE",
+      "time": "23 Jun 12:07"
+    },
+    {
+      "ticket_id": "4001234357",
+      "verdict": "REJECTED",
+      "reason": "Required document patterns missing from cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "UNKNOWN",
+      "time": "22 Jun 10:00"
+    },
+    {
+      "ticket_id": "4001234356",
+      "verdict": "REJECTED",
+      "reason": "Required document patterns missing from cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "UNKNOWN",
+      "time": "22 Jun 09:59"
+    },
+    {
+      "ticket_id": "4578102963",
+      "verdict": "REJECTED",
+      "reason": "Required document patterns missing from cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "UNKNOWN",
+      "time": "27 May 18:14"
+    },
+    {
+      "ticket_id": "4578102963",
+      "verdict": "REJECTED",
+      "reason": "Required document patterns missing from cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "UNKNOWN",
+      "time": "27 May 18:10"
+    },
+    {
+      "ticket_id": "4569871235",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster.",
+      "category": "PAID / REJECTED",
+      "time": "27 May 18:06"
+    },
+    {
+      "ticket_id": "4994493393",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster. (Note: 1 blank file(s) were excluded from validation)",
+      "category": "PAID / PURE",
+      "time": "27 May 17:43"
+    },
+    {
+      "ticket_id": "4994493393",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster.",
+      "category": "PAID / PURE",
+      "time": "27 May 17:41"
+    },
+    {
+      "ticket_id": "4569871235",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster.",
+      "category": "PAID / REJECTED",
+      "time": "27 May 17:28"
+    },
+    {
+      "ticket_id": "4569871235",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster.",
+      "category": "PAID / REJECTED",
+      "time": "27 May 17:25"
+    },
+    {
+      "ticket_id": "4569871235",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster.",
+      "category": "PAID / REJECTED",
+      "time": "27 May 09:40"
+    },
+    {
+      "ticket_id": "4569871235",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster.",
+      "category": "PAID / REJECTED",
+      "time": "26 May 17:18"
+    },
+    {
+      "ticket_id": "4569871235",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster.",
+      "category": "PAID / REJECTED",
+      "time": "26 May 17:15"
+    },
+    {
+      "ticket_id": "4569871235",
+      "verdict": "SUSPICIOUS",
+      "reason": "Duplicate files detected in document cluster.",
+      "category": "PAID / REJECTED",
+      "time": "26 May 17:12"
+    }
+  ]
+}

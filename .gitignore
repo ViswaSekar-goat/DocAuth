@@ -1,0 +1,14 @@
+node_modules/
+.env
+__pycache__/
+venv/
+dist/
+build/
+*.log
+*.sqlite
+*.db
+.DS_Store
+dataset/
+storage_forensics/
+backend/vehicle/
+backend/storage/uploads/

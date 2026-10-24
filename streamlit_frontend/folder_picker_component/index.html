@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body style="margin: 0; padding: 0; font-family: sans-serif;">
+    <style>
+        .folder-btn {
+            background-color: #FF4B4B;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+        .folder-btn:hover { background-color: #cc3a3a; }
+        .file-info {
+            margin-top: 10px; font-size: 13px; color: #155724; background: #d4edda;
+            border-radius: 6px; padding: 8px 12px; display: none; word-break: break-all;
+        }
+        .error-info {
+            margin-top: 10px; font-size: 13px; color: #721c24; background: #f8d7da;
+            border-radius: 6px; padding: 8px 12px; display: none;
+        }
+    </style>
+    
+    <input type="file" id="folderInput" webkitdirectory multiple accept=".pdf,.jpg,.jpeg,.png,.webp,.tiff,.bmp" style="display:none" />
+    <button class="folder-btn" onclick="document.getElementById('folderInput').click()">
+        📁 Select Folder
+    </button>
+    <div class="file-info" id="fileInfo"></div>
+    <div class="error-info" id="errorInfo"></div>
+
+    <script>
+        function sendMessageToStreamlitClient(type, data) {
+            var outData = Object.assign({
+                isStreamlitMessage: true,
+                type: type,
+            }, data);
+            window.parent.postMessage(outData, "*");
+        }
+
+        // Initialize component
+        sendMessageToStreamlitClient("streamlit:componentReady", {apiVersion: 1});
+        sendMessageToStreamlitClient("streamlit:setFrameHeight", {height: 120});
+
+        document.getElementById('folderInput').addEventListener('change', async function(e) {
+            const files = Array.from(e.target.files);
+            // Filter out hidden files
+            const validFiles = files.filter(f => {
+                const name = f.name.toLowerCase();
+                return !name.startsWith('.') && (
+                    name.endsWith('.pdf') || name.endsWith('.jpg') || 
+                    name.endsWith('.jpeg') || name.endsWith('.png') || 
+                    name.endsWith('.webp') || name.endsWith('.tiff') || 
+                    name.endsWith('.bmp')
+                );
+            });
+
+            const errorDiv = document.getElementById('errorInfo');
+            const infoDiv = document.getElementById('fileInfo');
+
+            errorDiv.style.display = 'none';
+            infoDiv.style.display = 'none';
+
+            if (validFiles.length === 0) {
+                errorDiv.textContent = '❌ No valid PDFs/Images found in the selected folder.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            infoDiv.textContent = `⏳ Reading ${validFiles.length} file(s)...`;
+            infoDiv.style.display = 'block';
+
+            try {
+                const fileDataList = await Promise.all(validFiles.map(file => {
+                    return new Promise((resolve) => {
+                        const reader = new FileReader();
+                        reader.onload = () => {
+                            const base64 = reader.result.split(',')[1];
+                            resolve({
+                                name: file.webkitRelativePath || file.name,
+                                size: file.size,
+                                data: base64
+                            });
+                        };
+                        reader.readAsDataURL(file);
+                    });
+                }));
+
+                infoDiv.textContent = `✅ ${validFiles.length} file(s) ready!`;
+                sendMessageToStreamlitClient("streamlit:setComponentValue", {value: fileDataList});
+            } catch (err) {
+                errorDiv.textContent = '❌ Error reading files: ' + err.message;
+                errorDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
